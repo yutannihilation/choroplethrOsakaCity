@@ -1,0 +1,13 @@
+Package: choroplethrOsakaCity
+Type: Package
+Title: Draw Choropleth Maps of Osaka city
+Version: 0.0.0.9000
+Date: 2015-05-24
+Author: Hiroaki Yutani
+Maintainer: Hiroaki Yutani <yutani.ini@gmail.com>
+Description: A map of Osaka city for the use with the choroplethr package. The original shp file is provided by Osaka City under a CC-BY 2.1 license
+License: MIT, CC-BY
+LazyData: TRUE
+Depends:
+  choroplethr,
+  R6
