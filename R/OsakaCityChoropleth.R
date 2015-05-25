@@ -7,10 +7,27 @@ osakaCityChoropleth <- R6Class(
   "osakaCityChoropleth",
   inherit = choroplethr:::Choropleth,
   public = list(
+    show_labels = TRUE,
+
     initialize = function(user.df)
     {
       data(osaka_city.map, package = "choroplethrOsakaCity")
       super$initialize(osaka_cify.map, user.df)
+    },
+
+    render = function()
+    {
+      choropleth = super$render()
+
+      # by default, add labels for the lower 48 states
+      if (self$show_labels) {
+        data(osaka_city.label, package = "choroplethrOsakaCity")
+
+        choropleth = choropleth +
+          geom_text(data = osaka_city.label, aes(long, lat, label = region_name, group = NULL), colour = 'black')
+      }
+
+      choropleth
     }
   )
 )
