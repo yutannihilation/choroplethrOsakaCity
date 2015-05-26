@@ -10,4 +10,7 @@ License: MIT, CC-BY
 LazyData: TRUE
 Depends:
   choroplethr,
-  R6
+  R6,
+  stringr,
+  ggplot2
+Encoding: UTF-8

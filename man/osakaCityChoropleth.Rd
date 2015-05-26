@@ -5,7 +5,7 @@
 \alias{osakaCityChoropleth}
 \alias{osaka_city_chropleth}
 \title{A Choropleth Class for Osaka City Map}
-\format{\preformatted{Class 'R6ClassGenerator' <environment: 0x000000000a349080> 
+\format{\preformatted{Class 'R6ClassGenerator' <environment: 0x000000000a317448> 
  - attr(*, "name")= chr "osakaCityChoropleth_generator"
 }}
 \usage{

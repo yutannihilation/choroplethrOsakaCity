@@ -2,3 +2,7 @@
 
 export(osakaCityChoropleth)
 export(osaka_city_chropleth)
+export(to_osaka_ward_code)
+export(to_osaka_ward_name)
+importFrom(ggplot2,geom_text)
+importFrom(stringr,str_replace_all)

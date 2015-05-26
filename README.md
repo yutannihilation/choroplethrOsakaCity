@@ -17,6 +17,7 @@ install_github("yutannihilation/choroplethrOsakaCity")
 
 ```r
 library(choroplethrOsakaCity)
+library(ggplot2)
 library(dplyr)
 
 csv_file <- tempfile(fileext = ".csv")
@@ -24,16 +25,12 @@ csv_file <- tempfile(fileext = ".csv")
 download.file("https://raw.githubusercontent.com/yutannihilation/osaka_age_composition/master/osaka_age_composition.csv",
               destfile = csv_file, method = "curl")
 
-data(region_correspondence_table, package = "choroplethrOsakaCity")
-
 age_comp.df <- read.csv(csv_file, header = TRUE, stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
   group_by(district) %>% 
   summarise(value = sum(age * total)/sum(total)) %>%
   mutate(district = paste0(district, '区')) %>%
-  mutate(region = plyr::mapvalues(district,
-                                  from = region_correspondence_table$region_name,
-                                  to   = region_correspondence_table$region))
+  mutate(region = to_osaka_ward_code(district))
 
-osaka_city_chropleth(age_comp.df, title = "Age Composition")
+osaka_city_chropleth(age_comp.df, title = "Age Composition") + coord_equal()
 ```
 ![demo](demo.png)
