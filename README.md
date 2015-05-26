@@ -28,7 +28,6 @@ download.file("https://raw.githubusercontent.com/yutannihilation/osaka_age_compo
 age_comp.df <- read.csv(csv_file, header = TRUE, stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
   group_by(district) %>% 
   summarise(value = sum(age * total)/sum(total)) %>%
-  mutate(district = paste0(district, '区')) %>%
   mutate(region = to_osaka_ward_code(district))
 
 osaka_city_chropleth(age_comp.df, title = "Age Composition") + coord_equal()
