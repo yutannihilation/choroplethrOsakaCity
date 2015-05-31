@@ -1,7 +1,7 @@
 Package: choroplethrOsakaCity
 Type: Package
 Title: Draw Choropleth Maps of Osaka city
-Version: 0.0.0.9000
+Version: 0.0.1
 Date: 2015-05-24
 Author: Hiroaki Yutani
 Maintainer: Hiroaki Yutani <yutani.ini@gmail.com>
