@@ -1,7 +1,8 @@
 #' A Choropleth Class for Osaka City Map
 #'
 #' @name osakaCityChoropleth
-#' @importFrom ggplot2 geom_text
+#' @importFrom ggplot2 geom_text aes
+#' @importFrom R6 R6Class
 #' @export
 osakaCityChoropleth <- R6Class(
   "osakaCityChoropleth",
