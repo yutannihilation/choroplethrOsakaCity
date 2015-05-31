@@ -5,7 +5,7 @@
 \alias{osakaCityChoropleth}
 \alias{osaka_city_chropleth}
 \title{A Choropleth Class for Osaka City Map}
-\format{\preformatted{Class 'R6ClassGenerator' <environment: 0x000000000a1a9590> 
+\format{\preformatted{Class 'R6ClassGenerator' <environment: 0x000000000a15c1e8> 
  - attr(*, "name")= chr "osakaCityChoropleth_generator"
 }}
 \usage{
@@ -16,6 +16,23 @@ osaka_city_chropleth(df, title = "", legend = "", num_colors = 7,
 }
 \description{
 A Choropleth Class for Osaka City Map
+}
+\examples{
+\dontrun{
+library(ggplot2)
+library(dplyr)
+
+csv_file <- tempfile(fileext = ".csv")
+download.file("https://raw.githubusercontent.com/yutannihilation/osaka_age_composition/master/osaka_age_composition.csv",
+           destfile = csv_file, method = "curl")
+
+age_comp.df <- read.csv(csv_file, header = TRUE, stringsAsFactors = FALSE, fileEncoding = "UTF-8") \%>\%
+  group_by(district) \%>\%
+  summarise(value = sum(age * total)/sum(total)) \%>\%
+  mutate(region = to_osaka_ward_code(district))
+
+osaka_city_chropleth(age_comp.df, title = "Age Composition") + coord_equal()
+}
 }
 \keyword{datasets}
 

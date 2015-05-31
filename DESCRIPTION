@@ -14,5 +14,5 @@ Imports:
   choroplethr (>= 3.0.0),
   R6,
   stringr,
-  ggplot2 (>= 1.0.0),
+  ggplot2 (>= 1.0.0)
 Encoding: UTF-8

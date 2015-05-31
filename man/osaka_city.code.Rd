@@ -4,13 +4,26 @@
 \alias{osaka_city.code}
 \alias{to_osaka_ward_code}
 \alias{to_osaka_ward_name}
-\title{Convert ward code from/to ward name}
+\title{Convert ward codes from/to ward names}
 \usage{
 to_osaka_ward_name(ward_code, to = c("kanji", "alphabet"))
 
 to_osaka_ward_code(ward_name, from = c("kanji", "alphabet"))
 }
 \description{
-Convert ward code from/to ward name
+Convert ward codes from/to ward names
+}
+\examples{
+# no problem whether the type of the given argument is integer or character
+to_osaka_ward_name(c(27127, 27104, 27118))
+to_osaka_ward_name(c("27127", "27104", "27118"))
+
+# get alphabet name
+to_osaka_ward_name(c(27127, 27104, 27118), to = "alphabet")
+
+# get code from ward name (case-insensitive)
+# '-ku'/'区' suffix is automatically appended
+to_osaka_ward_code(c("北区", "此花", "城東"))
+to_osaka_ward_code(c("Kita", "konohana-ku", "JOTO"), from = "alphabet")
 }
 
