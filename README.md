@@ -13,7 +13,7 @@ You can draw the choropleth maps of Osaka, the second largest city in Japan. The
 install_github("yutannihilation/choroplethrOsakaCity")
 ```
 
-## How To Use
+## Usage
 
 ```r
 library(choroplethrOsakaCity)
