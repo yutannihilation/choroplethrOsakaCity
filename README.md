@@ -1,6 +1,8 @@
 Osaka City Map for choroplethr
 ====================
 
+[![Travis-CI Build Status](https://travis-ci.org/yutannihilation/choroplethrOsakaCity.svg?branch=master)](https://travis-ci.org/yutannihilation/choroplethrOsakaCity)
+
 ## Original Map Data
 
 This package is for the use with the choroplethr package.
